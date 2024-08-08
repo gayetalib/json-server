@@ -1,0 +1,28 @@
+<h3>List of students</h3>
+<div class="container" *ngIf="students == null">
+  <div class="row">
+     <p>La liste des étudiants est vide</p>
+  </div>
+</div>
+<table class="table" *ngIf="students != null">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students;let num = index">
+      <th>{{ num + 1 }}</th>
+      <td>{{ student.name }}</td>
+      <td>{{ student.email }}</td>
+      <td>
+        <i (click)="deleteStudent(student.id)" class="fa fa-trash"></i>
+           &nbsp;&nbsp;&nbsp;
+        <i (click)="editStudent(student.id)" class="fa fa-edit"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>
