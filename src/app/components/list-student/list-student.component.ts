@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StudentsService } from 'src/app/students.service';
+import { Subject, takeUntil } from 'rxjs';
+import { StudentsService } from 'src/app/services/students.service';
 
 @Component({
   selector: 'app-list-student',
@@ -8,18 +9,26 @@ import { StudentsService } from 'src/app/students.service';
   styleUrls: ['./list-student.component.css']
 })
 export class ListStudentComponent implements OnInit {
+  students:any;
+  destroy$:Subject<boolean> = new Subject();
 
   constructor(private studentService: StudentsService, private router: Router){}
 
-  students:any;
   ngOnInit(): void {
       this.getAllStudents();
   }
 
+  ngOnDestroy() : void{
+    this.destroy$.next(true);
+    this.destroy$.complete();
+  }
+
   getAllStudents(){
     this.studentService.getAll()
+    .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (data) =>  {
+
             console.log(data);
             this.students = data;
         },

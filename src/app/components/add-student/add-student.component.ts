@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { StudentsService } from 'src/app/students.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { StudentsService } from 'src/app/services/students.service';
 
 @Component({
   selector: 'app-add-student',
@@ -8,23 +8,27 @@ import { StudentsService } from 'src/app/students.service';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent implements OnInit{
-
-  constructor(private studentService:StudentsService){}
-
-  studentFormGroup = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.email])
+  studentFormGroup: FormGroup = this.fb.group({
+    name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.email]]
   });
+
   message:boolean = false;
+
+
+  constructor(
+    private studentService:StudentsService,
+    private fb: FormBuilder
+  ){}
 
   ngOnInit(): void {
     //throw new Error('Method not implemented.');
   }
 
   saveStudent(){
-    console.log(this.studentFormGroup.value);
-
-    this.message = true;
+    //console.log(this.studentFormGroup.value);
+    if (this.studentFormGroup.valid) {
+      this.message = true;
 
     this.studentService.add(this.studentFormGroup.value)
       .subscribe(() => {
@@ -32,6 +36,7 @@ export class AddStudentComponent implements OnInit{
       });
 
       this.studentFormGroup.reset();
+    }
   }
 
 }

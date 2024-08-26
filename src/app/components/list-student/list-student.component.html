@@ -10,6 +10,8 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Role</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -18,6 +20,8 @@
       <th>{{ num + 1 }}</th>
       <td>{{ student.name }}</td>
       <td>{{ student.email }}</td>
+      <td>{{ student.gender | gender }}</td>
+      <td>{{ student.role | role }}</td>
       <td>
         <i (click)="deleteStudent(student.id)" class="fa fa-trash"></i>
            &nbsp;&nbsp;&nbsp;

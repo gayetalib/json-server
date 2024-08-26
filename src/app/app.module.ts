@@ -11,6 +11,8 @@ import { RegisterStudentComponent } from './components/register-student/register
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
+import { GenderPipe } from './pipes/gender.pipe';
+import { RolePipe } from './pipes/role.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditStudentComponent,
     ListStudentComponent,
     LoginStudentComponent,
-    RegisterStudentComponent
+    RegisterStudentComponent,
+    GenderPipe,
+    RolePipe
   ],
   imports: [
     BrowserModule,

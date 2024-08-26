@@ -3,32 +3,65 @@
     {
       "name": "Ousmane FALL 2",
       "email": "ousmane@gmail.com",
-      "id": "2"
+      "id": "2",
+      "gender": "M",
+      "role": "ADMIN",
+      "enabled": true
     },
     {
       "id": "74d2",
       "name": "Moustapha Gaye",
-      "email": "tapha@gmail.com"
+      "email": "tapha@gmail.com",
+      "gender": "M",
+      "role": "USER",
+      "enabled": false
     },
     {
       "id": "144f",
       "name": "Fatima Barry",
-      "email": "fbarrydiallo@yopmail.com"
+      "email": "fbarrydiallo@yopmail.com",
+      "gender": "F",
+      "role": "SUPER_ADMIN",
+      "enabled": true
     },
     {
       "name": "Salem KABA DIAKHATE",
       "email": "salem@mermoz.sn",
-      "id": "faed"
+      "id": "faed",
+      "gender": "M",
+      "role": "USER",
+      "enabled": false
     },
     {
       "id": "a128",
       "name": "Sanou Gaye",
-      "email": "sanou@gmail.com"
+      "email": "sanou@gmail.com",
+      "gender": "F",
+      "role": "USER",
+      "enabled": true
     },
     {
       "id": "8200",
       "name": "Oumar Sy",
-      "email": "sy@gmail.com"
+      "email": "sy@gmail.com",
+      "gender": "M",
+      "role": "USER",
+      "enabled": true
+    },
+    {
+      "id": "f920",
+      "name": "Mousta",
+      "email": ""
+    },
+    {
+      "id": "5d14",
+      "name": "Sam",
+      "email": ""
+    },
+    {
+      "id": "a1d4",
+      "name": "oss",
+      "email": ""
     }
   ]
 }
