@@ -1,0 +1,16 @@
+<p>product-list works!</p>
+
+<div *ngFor="let product of products">
+  <h3>{{ product.name }}</h3>
+  <p>Price: {{ product.price }}</p>
+  <button
+    (click)="addToCart(product)"
+    [disabled]="isProductInCart(product.id)"
+    [title]="isProductInCart(product.id) ? 'Already selected' : ''">
+    Add to Cart
+  </button>
+</div>
+
+<button (click)="goToCart()">My Cart</button>
+
+

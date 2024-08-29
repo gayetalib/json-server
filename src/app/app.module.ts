@@ -13,6 +13,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from '@angular/forms';
 import { GenderPipe } from './pipes/gender.pipe';
 import { RolePipe } from './pipes/role.pipe';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RolePipe } from './pipes/role.pipe';
     LoginStudentComponent,
     RegisterStudentComponent,
     GenderPipe,
-    RolePipe
+    RolePipe,
+    ProductListComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
